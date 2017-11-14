@@ -13,7 +13,7 @@ from codec.actions import get_whoami, send_message, get_diag, send_dial, get_las
 
 bot_email = 'TTSparkCare@sparkbot.io'
 spark_token = 'ZDRjZDJlZGUtMGRkOS00NjU5LWI4MjAtYmY0YTExNmU3YWVhMGM5Mzk1MGMtYmZh'
-bot_url = 'tg'
+bot_url = 'https://ttsparkcare.herokuapp.com/'
 bot_roomid = "Y2lzY29zcGFyazovL3VzL1JPT00vOTNmYTU0NDAtYzk1Yy0xMWU3LTg2NjMtZmZkYjlkYTMxYmUx"
 bot_app_name = "TTSparkCare"
 codec_username = "admin"
