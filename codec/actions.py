@@ -1,12 +1,12 @@
 import os
 import requests
 from lxml import etree
-from templates import message, dial, last
+from codec.templates import message, dial, last
 
 
 def send_message(messagefromspark):
-    codec_username = os.getenv("CODEC_USERNAME")
-    codec_password = os.getenv("CODEC_PASSWORD")
+    codec_username = "admin"
+    codec_password = "cisco"
     words = messagefromspark.text.split()  # ['@bot', 'send', '192.168.1.204', 'hello']
     msg_to_codec = " ".join(words[3:])
     print(msg_to_codec)
@@ -22,8 +22,8 @@ def send_message(messagefromspark):
 
 
 def get_whoami(message):
-    codec_username = os.getenv("CODEC_USERNAME")
-    codec_password = os.getenv("CODEC_PASSWORD")
+    codec_username = "admin"
+    codec_password = "cisco"
     host = message.text.split()[-1]
     url = 'http://{}/status.xml'.format(host)
     response = requests.get(url, auth=(codec_username, codec_password))

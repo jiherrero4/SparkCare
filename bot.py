@@ -1,18 +1,21 @@
 import json
 import os
+import os.path
+import sys
+
 
 from ciscosparkbot import SparkBot
 from flask import request, make_response
 
 from codec.actions import get_whoami, send_message, get_diag, send_dial, get_last
 
-bot_email = os.getenv("SPARK_BOT_EMAIL")
-spark_token = os.getenv("SPARK_BOT_TOKEN")
-bot_url = os.getenv("SPARK_BOT_URL")
-bot_roomid = os.getenv("SPARK_BOT_ROOMID")
-bot_app_name = os.getenv("SPARK_BOT_APP_NAME")
-codec_username = os.getenv("CODEC_USERNAME")
-codec_password = os.getenv("CODEC_PASSWORD")
+bot_email = 'TTSparkCare@sparkbot.io'
+spark_token = 'ZDRjZDJlZGUtMGRkOS00NjU5LWI4MjAtYmY0YTExNmU3YWVhMGM5Mzk1MGMtYmZh'
+bot_url = 'tg'
+bot_roomid = "Y2lzY29zcGFyazovL3VzL1JPT00vOTNmYTU0NDAtYzk1Yy0xMWU3LTg2NjMtZmZkYjlkYTMxYmUx"
+bot_app_name = "TTSparkCare"
+codec_username = "admin"
+codec_password = "cisco"
 
 
 bot = SparkBot(bot_app_name, spark_bot_token=spark_token,
@@ -49,7 +52,7 @@ def receivepostfromcodec():
         print("nothing to do")
         return make_response("ok")
 
-
+"""
 bot.add_command('diag',
                 "get the diagnostics from a codec. \
                 e.g. `@{} diag 10.1.1.1`".format(bot_email.split('@')[0]),
@@ -77,4 +80,13 @@ bot.add_command('whoami',
                 "display codec details \
                 e.g. `@{} whoami 10.1.1.1`".format(bot_email.split('@')[0]),
                 get_whoami)
-bot.run(host='0.0.0.0', port=5000)
+
+"""
+
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+
+    print("Starting app on port %d" % port)
+
+    bot.run(debug=False, port=port, host='0.0.0.0')
