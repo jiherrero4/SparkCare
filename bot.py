@@ -54,7 +54,7 @@ def receivepostfromcodec():
         print("nothing to do...")
         return make_response("ok")
 
-"""
+
 bot.add_command('diag',
                 "get the diagnostics from a codec. \
                 e.g. `@{} diag 10.1.1.1`".format(bot_email.split('@')[0]),
@@ -83,7 +83,7 @@ bot.add_command('whoami',
                 e.g. `@{} whoami 10.1.1.1`".format(bot_email.split('@')[0]),
                 get_whoami)
 
-"""
+
 
 
 if __name__ == '__main__':
