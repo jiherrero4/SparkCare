@@ -48,8 +48,8 @@ def get_whoami(message):
 
 
 def get_diag(message):
-    codec_username = os.getenv("CODEC_USERNAME")
-    codec_password = os.getenv("CODEC_PASSWORD")
+    codec_username = "admin"
+    codec_password = "cisco"
     host = message.text.split()[-1]
     url = 'http://{}//getxml?location=/Status/Diagnostics'.format(host)
     diagresponse = requests.get(url, auth=(codec_username, codec_password))
@@ -65,8 +65,8 @@ def get_diag(message):
 
 
 def send_dial(dialfromspark):
-    codec_username = os.getenv("CODEC_USERNAME")
-    codec_password = os.getenv("CODEC_PASSWORD")
+    codec_username = "admin"
+    codec_password = "cisco"
     words = dialfromspark.text.split() # ['@bot', 'dial', '192.168.1.204', 'loopback@cisco.com']
     dial_number = words[3]
     print(dial_number)
@@ -87,8 +87,8 @@ def send_dial(dialfromspark):
 
 
 def get_last(lastcallfromspark):
-    codec_username = os.getenv("CODEC_USERNAME")
-    codec_password = os.getenv("CODEC_PASSWORD")
+    codec_username = "admin"
+    codec_password = "cisco"
     # long way
     # message_text = lastcallfromspark.text
     # words = message_text.split()
