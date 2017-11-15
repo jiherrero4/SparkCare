@@ -51,7 +51,7 @@ def receivepostfromcodec():
         message = bot.spark.messages.create(roomId=bot_roomid, markdown=msg2spark)
         return make_response("ok")
     else:
-        print("nothing to do")
+        print("nothing to do...")
         return make_response("ok")
 
 """
